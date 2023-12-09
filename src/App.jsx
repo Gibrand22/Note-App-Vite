@@ -65,21 +65,27 @@ const App = () => {
 		setNotes(newNotes);
 	};
 
-	return (
+	const editNote = (id, newText) => {
+		const updatedNotes = notes.map((note) =>
+		  note.id === id ? { ...note, text: newText } : note
+		);
+		setNotes(updatedNotes);
+	  };
+	
+	  return (
 		<div className={`${darkMode && 'dark-mode'}`}>
-			<div className='container'>
+		  <div className='container'>
 				<Header handleToggleDarkMode={setDarkMode} />
 				<Search handleSearchNote={setSearchText} />
-				<NotesList
-					notes={notes.filter((note) =>
-						note.text.toLowerCase().includes(searchText)
-					)}
-					handleAddNote={addNote}
-					handleDeleteNote={deleteNote}
-				/>
-			</div>
+		  <NotesList
+			notes={notes.filter((note) => note.text.toLowerCase().includes(searchText.toLowerCase()))}
+			handleAddNote={addNote}
+			handleDeleteNote={deleteNote}
+			handleEditNote={editNote} // Pass the edit function to NotesList
+		  />
 		</div>
-	);
-};
+		</div>
+	  );
+	};
 
 export default App;

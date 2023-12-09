@@ -63,6 +63,15 @@ textarea:focus {
 	border: none;
 	border-radius: 15px;
 	padding: 5px 10px 5px 10px;
+	margin-right: 10px;
+
+}
+
+.cancel {
+	background-color: #e1e1e1;
+	border: none;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
 }
 
 .save:hover {
@@ -90,6 +99,17 @@ textarea:focus {
 .delete-icon {
 	cursor: pointer;
 }
+
+.edit-icon {
+	margin-right: 10px;
+}
+
+
+.editing{
+	background-color: #67d7cc;
+}
+
+
 
 .search {
 	display: flex;

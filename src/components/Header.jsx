@@ -1,4 +1,5 @@
 import React from 'react';
+import { CgDarkMode } from "react-icons/cg";
 
 const Header = ({ handleToggleDarkMode }) => {
 	return (
@@ -12,7 +13,7 @@ const Header = ({ handleToggleDarkMode }) => {
 				}
 				className='save'
 			>
-				Toggle Mode
+				<CgDarkMode size={25}/>
 			</button>
 		</div>
 	);
